@@ -1,9 +1,7 @@
 
 const express = require('express');
 
-app.get('/test', (req, res) => {
-    res.send('TEST WORKS');
-  });
+
   
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
@@ -13,6 +11,10 @@ const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 
+app.get('/test', (req, res) => {
+    res.send('TEST WORKS');
+  });
+
 app.use(cors());
 app.use(express.json());
 
@@ -20,8 +22,9 @@ app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/messages', messageRoutes);
 
-module.exports = app;
 
 const errorHandler = require('./middlewares/errorMiddleware');
 
 app.use(errorHandler);
+
+module.exports = app;
