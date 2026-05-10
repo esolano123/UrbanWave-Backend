@@ -11,9 +11,6 @@ const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 
-app.get('/test', (req, res) => {
-    res.send('TEST WORKS');
-  });
 
 app.use(cors());
 app.use(express.json());
