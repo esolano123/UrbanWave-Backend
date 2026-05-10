@@ -1,3 +1,7 @@
+app.get('/test', (req, res) => {
+    res.send('TEST WORKS');
+  });
+  
 const express = require('express');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
